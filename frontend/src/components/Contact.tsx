@@ -88,27 +88,21 @@ const Contact = () => {
           </h2>
 
           <div className="contact__info">
-            <a href="mailto:your@email.com" className="contact__info-item">
-              <span className="contact__info-label">Email</span>
-              <span className="contact__info-value">your@email.com ↗</span>
-            </a>
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="contact__info-item"
-            >
+            <a href="https://github.com/anbuk1913" target="_blank" rel="noreferrer" className="contact__info-item">
               <span className="contact__info-label">GitHub</span>
-              <span className="contact__info-value">github.com/yourusername ↗</span>
+              <span className="contact__info-value">github.com/anbuk1913 ↗</span>
             </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="contact__info-item"
-            >
+            <a href="mailto:anbukumar.careers@gmail.com" className="contact__info-item" target="_blank" rel="noreferrer" >
+              <span className="contact__info-label">Email</span>
+              <span className="contact__info-value">anbukumar.careers@gmail.com ↗</span>
+            </a>
+            <a href="https://leetcode.com/u/Anbukumar_19" target="_blank" rel="noreferrer" className="contact__info-item">
+              <span className="contact__info-label">Leetcode</span>
+              <span className="contact__info-value">leetcode.com/u/Anbukumar_19 ↗</span>
+            </a>
+            <a href="https://www.linkedin.com/in/anbukumar-mern" target="_blank" rel="noreferrer" className="contact__info-item">
               <span className="contact__info-label">LinkedIn</span>
-              <span className="contact__info-value">linkedin.com/in/yourusername ↗</span>
+              <span className="contact__info-value">linkedin.com/in/anbukumar-mern ↗</span>
             </a>
           </div>
         </div>
@@ -181,7 +175,7 @@ const Contact = () => {
       <div className="contact__footer">
         <div className="contact__footer-line" />
         <div className="contact__footer-inner">
-          <span>© {new Date().getFullYear()} — Full Stack Developer</span>
+          <span>© {new Date().getFullYear()} — Anbukumar. All rights reserved.</span>
           {/* <span>Built with React + TypeScript + GSAP</span> */}
         </div>
       </div>
