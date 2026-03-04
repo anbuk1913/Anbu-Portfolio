@@ -83,6 +83,7 @@ export default function Cursor() {
   const trailIdRef = useRef(0);
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     document.body.style.cursor = "none";
     return () => {
       document.body.style.cursor = "";
@@ -134,6 +135,11 @@ export default function Cursor() {
   }, []);
 
   if (hidden) return null;
+
+  // Don't render the custom cursor on touch / mobile devices
+  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+    return null;
+  }
 
   return (
     <>
@@ -263,7 +269,7 @@ export default function Cursor() {
           <rect x="6" y="10" width="2" height="2" fill="#ffffff" />
           <rect x="8" y="10" width="2" height="2" fill="#ffffff" />
           <rect x="0" y="0" width="1" height="12" fill="none" />
-          <rect x="0" y="0" width="10" height="12" fill="#000000ff" opacity="0"/>
+          <rect x="0" y="0" width="10" height="12" fill="#000000ff" opacity="0" />
         </svg>
       </div>
     </>
