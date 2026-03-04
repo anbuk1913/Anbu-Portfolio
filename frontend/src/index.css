@@ -1,24 +1,30 @@
 /* ─── Reset & Base ─── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  --black:      #080808fd;
-  --black-alt:  #111111;
+  --black: #080808fd;
+  --black-alt: #111111;
   --black-soft: #1a1a1a;
-  --white:      #f2f0eb;
-  --off-white:  #d8d5ce;
-  --gray-dark:  #3a3a3a;
-  --gray:       #777777;
+  --white: #f2f0eb;
+  --off-white: #d8d5ce;
+  --gray-dark: #3a3a3a;
+  --gray: #777777;
   --gray-light: #aaaaaa;
-  --border:     rgba(242,240,235,0.10);
-  --border-mid: rgba(242,240,235,0.18);
+  --border: rgba(242, 240, 235, 0.10);
+  --border-mid: rgba(242, 240, 235, 0.18);
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-mono:    'DM Mono', 'Courier New', monospace;
-  --font-caps:    'Bebas Neue', Impact, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --font-caps: 'Bebas Neue', Impact, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 html {
@@ -38,13 +44,28 @@ body {
 }
 
 /* Hide default cursor */
-*, *::before, *::after { cursor: none !important; }
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
 
 /* ─── Scrollbar ─── */
-::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--gray-dark); }
-::-webkit-scrollbar-thumb:hover { background: var(--white); }
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--white);
+}
 
 /* ─── Noise overlay ─── */
 body::after {
@@ -58,9 +79,17 @@ body::after {
 }
 
 /* ─── Typography helpers ─── */
-.font-display { font-family: var(--font-display); }
-.font-mono    { font-family: var(--font-mono); }
-.font-caps    { font-family: var(--font-caps); }
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-caps {
+  font-family: var(--font-caps);
+}
 
 /* ─── Selection ─── */
 ::selection {
@@ -70,9 +99,15 @@ body::after {
 
 /* ─── Utility ─── */
 .sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ─── Horizontal rule ─── */
@@ -83,17 +118,40 @@ body::after {
 }
 
 /* ─── Reveal classes (GSAP targets) ─── */
-.reveal         { opacity: 0; transform: translateY(40px); }
-.reveal-left    { opacity: 0; transform: translateX(-40px); }
-.reveal-right   { opacity: 0; transform: translateX(40px); }
-.reveal-scale   { opacity: 0; transform: scale(0.94); }
-.char           { display: inline-block; overflow: hidden; }
-.char-inner     { display: inline-block; }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+.char {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.char-inner {
+  display: inline-block;
+}
 
 /* ─── Scrollbar progress ─── */
 .scroll-progress {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 2px;
   background: var(--white);
   z-index: 9999;
@@ -103,8 +161,26 @@ body::after {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  html { font-size: 14px; }
+  html {
+    font-size: 14px;
+  }
 }
+
 @media (max-width: 480px) {
-  html { font-size: 13px; }
+  html {
+    font-size: 13px;
+  }
+}
+
+/* ─── Disable custom cursor on touch / mobile devices ─── */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    cursor: auto !important;
+  }
 }
